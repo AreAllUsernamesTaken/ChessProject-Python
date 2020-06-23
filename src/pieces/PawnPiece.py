@@ -18,6 +18,7 @@ class Pawn(ChessPiece):
 		# Check for left/right movements
 		if yCoordinate != newY:
 			return False
+
 		# White pawns can only go UP (decreasing on OX)
 		if self.pieceColor == PieceColor.WHITE:
 			if xCoordinate < newX or xCoordinate - newX > 2\
@@ -55,7 +56,7 @@ class Pawn(ChessPiece):
 		return False
 
 	# The pawn can move only 1 square. It never colides (either attacks or free square).
-	def collisionCheck(self, xCoordinate: int, yCoordinate: int, newX: int, newY: int, board: list) -> bool:
+	def collision_check(self, xCoordinate: int, yCoordinate: int, newX: int, newY: int, board: list) -> bool:
 		return False
 
 	def print(self) -> str:
